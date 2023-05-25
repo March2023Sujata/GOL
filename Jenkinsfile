@@ -11,6 +11,9 @@ pipeline {
             }
         }
         stage('package') {
+            tools{
+                jdk 'JDK-17'
+            }
             steps {
                 sh 'mvn package'
             }
