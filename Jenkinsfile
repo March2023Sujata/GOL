@@ -7,5 +7,10 @@ pipeline {
                     branch: 'master'
             }
         }
+        stage('package') {
+            steps {
+                sh 'mvn package'
+            }
+        }
     }
 }
