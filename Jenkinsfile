@@ -16,5 +16,12 @@ pipeline {
                 sh 'docker image push sujatajoshi/gameoflife:latest'
             }
         }
+        stage('deploy') {
+            steps {
+                sh 'kubectl apply -f .'
+                sh 'sleep 10s'
+                sh 'kubectl get svc'
+            }
+        }
     }
 }
