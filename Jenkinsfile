@@ -12,7 +12,7 @@ pipeline {
         }
         stage('build and push') {
             steps {
-                sh 'docker image build -t sujatajoshi/gol:latest .'
+                sh 'docker image build -t sujatajoshi/gameoflife:latest .'
             }
         }
     }
