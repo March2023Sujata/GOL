@@ -10,12 +10,9 @@ pipeline {
                     branch: 'master'
             }
         }
-        stage('package') {
-            tools{
-                jdk 'JDK-17'
-            }
+        stage('build and push') {
             steps {
-                sh 'mvn package'
+                sh 'docker image build -t sujatajoshi/gol:latest .'
             }
         }
     }
