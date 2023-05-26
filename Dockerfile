@@ -1,5 +1,5 @@
 FROM maven:3-amazoncorretto-8 AS builder
-ADD /GOL /game-of-life
+ADD . /game-of-life
 RUN cd /game-of-life && mvn package
 
 FROM tomcat:9-jdk8
